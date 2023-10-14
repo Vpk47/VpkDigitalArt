@@ -39,7 +39,7 @@ function recordLogoutEvent($username) {
     $event_type = 'logout';
 
     // Create a prepared statement
-    $stmt = $conn->prepare("INSERT INTO login_events (username, logout_time, event_type) VALUES (?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO login_events (username, activity_time, event_type) VALUES (?, ?, ?)");
 
     if ($stmt === false) {
         die("Error in preparing the statement: " . $conn->error);
