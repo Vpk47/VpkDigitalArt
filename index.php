@@ -8,9 +8,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="author" content="Vpk" />
   <title>Vpk Digital Art - Explore the limitless world of digital art</title>
   <meta name="description" content="Vpk Digital Art is a company that offers digital art services and products. We are passionate about creating stunning and original artworks that embrace the pixels and tell a story worth sharing.">
   <meta name="keywords" content="digital art, pixel art, art services, art products, creative, innovative, Digital painting, Pixel art, Digital illustration, Digital collage">
