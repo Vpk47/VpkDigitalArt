@@ -3,15 +3,10 @@ session_start();
 
 require_once 'config.php';
 
-$host = getenv('DB_HOST');
-$username = getenv('DB_USER');
-$password = getenv('DB_PASSWORD');
-$database = getenv('DB_NAME');
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-$conn = pg_connect("host=$host dbname=$database user=$username password=$password");
-
-if (!$conn) {
-    die("Connection failed: " . pg_last_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 if (isset($_SESSION['username'])) {
@@ -26,12 +21,10 @@ function recordLogoutEvent($username, $conn) {
     date_default_timezone_set('Asia/Kolkata');
     $timestamp = date('Y-m-d H:i:s');
     $event_type = 'logout';
-    $username = pg_escape_string($username);
+    $username = $conn->real_escape_string($username);
     $sql = "INSERT INTO login_events (username, activity_time, event_type) VALUES ('$username', '$timestamp', '$event_type')";
 
-    $result = pg_query($conn, $sql);
-
-    if ($result) {
+    if ($conn->query($sql) === TRUE) {
         // Destroy the session
         session_destroy();
     } else {
@@ -41,6 +34,6 @@ function recordLogoutEvent($username, $conn) {
         header("Location: index.php");
     }
 
-    pg_close($conn);
+    $conn->close();
 }
 ?>
