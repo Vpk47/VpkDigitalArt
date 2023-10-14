@@ -2,13 +2,9 @@
 session_start(); // Start the session
 
 // Database connection settings (replace with your Hostinger MySQL credentials)
-$host = "89.117.188.52";
-$username = "u831675891_Vpk";
-$password = "Codename47@Vpk";
-$database = "u831675891_VpkDigitalArt";
+require_once 'config.php';
 
-// Create a connection
-$conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 // Check connection
 if ($conn->connect_error) {
