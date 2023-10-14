@@ -118,9 +118,9 @@
                     <h2>Inquiry Form</h2>
                         <?php
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            $name = $_POST["name"];
-                            $email = $_POST["email"];
-                            $message = $_POST["message"];
+                            $name = htmlspecialchars($_POST["name"]);
+                            $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+                            $message = htmlspecialchars($_POST["message"]);
 
                             $recipient = $email; // Replace with your email address
                             $subject = "New Inquiry from $name";
@@ -154,6 +154,7 @@
                             ';
                         }
                         ?>
+
               </div>
             </div>
           </div>
