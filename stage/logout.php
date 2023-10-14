@@ -9,12 +9,14 @@ $username = getenv('DB_USERNAME');
 $password = getenv('DB_PASSWORD');
 $database = getenv('DB_DATABASE');
 
-$conn = new mysqli($host, $username, $password, $database);
+$conn = pg_connect("host=$host dbname=$database user=$username password=$password");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . pg_last_error());
 }
+
+// Connection is successful
+
 
 // Check if the user is logged in
 if (isset($_SESSION['username'])) {
