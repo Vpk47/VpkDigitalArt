@@ -11,14 +11,27 @@ if ($conn->connect_error) {
 }
 
 // Get user input
-$username = $conn->real_escape_string($_POST['username']); // Use real_escape_string for security
-$password = $conn->real_escape_string($_POST['password']); // Use real_escape_string for security
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-// Query the database to check user credentials
-$query = "SELECT * FROM login WHERE UserName='$username' AND Password='$password'";
-$result = $conn->query($query);
+// Create a prepared statement
+$query = "SELECT * FROM login WHERE UserName = ? AND Password = ?";
+$stmt = $conn->prepare($query);
 
-if ($result && $result->num_rows == 1) {
+if (!$stmt) {
+    die("Error in preparing the statement: " . $conn->error);
+}
+
+// Bind the parameters
+$stmt->bind_param("ss", $username, $password);
+
+// Execute the query
+$stmt->execute();
+
+// Get the result
+$result = $stmt->get_result();
+
+if ($result->num_rows == 1) {
     // Successful login, redirect to your custom page
     $_SESSION['username'] = $username; // Store user information in the session
 
@@ -34,17 +47,24 @@ if ($result && $result->num_rows == 1) {
 
 // Function to record a login event with a timestamp
 function recordLoginEvent($username, $conn) {
-    $username = $conn->real_escape_string($username);
     date_default_timezone_set('Asia/Kolkata');
     $timestamp = date('Y-m-d H:i:s'); // Get the current timestamp
     // Define the event type (login)
     $event_type = 'login';
-    $sql = "INSERT INTO login_events (username, activity_time, event_type) VALUES ('$username', '$timestamp', '$event_type')";
+    $sql = "INSERT INTO login_events (username, activity_time, event_type) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
 
-    $result = $conn->query($sql);
+    if (!$stmt) {
+        echo "Error in preparing the statement: " . $conn->error;
+        return;
+    }
 
-    if (!$result) {
-        echo "Error: " . $conn->error;
+    $stmt->bind_param("sss", $username, $timestamp, $event_type);
+    if ($stmt->execute()) {
+        // Success
+        $stmt->close();
+    } else {
+        echo "Error: " . $stmt->error;
     }
 }
 
