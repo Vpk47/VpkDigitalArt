@@ -21,13 +21,9 @@ exit;
 // Function to record a logout event with a timestamp
 function recordLogoutEvent($username) {
     // Database connection settings (replace with your Hostinger MySQL credentials)
-    $host = "89.117.188.52";
-    $username = "u831675891_Vpk";
-    $password = "Codename47@Vpk";
-    $database = "u831675891_VpkDigitalArt";
+    require_once 'config.php';
 
-    // Create a connection to the database
-    $conn = new mysqli($host, $username, $password, $database);
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
     // Check connection
     if ($conn->connect_error) {
