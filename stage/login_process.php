@@ -9,21 +9,21 @@ $username = getenv('DB_USERNAME');
 $password = getenv('DB_PASSWORD');
 $database = getenv('DB_DATABASE');
 
-$conn = pg_connect("host=$host dbname=$database user=$username password=$password");
+$conn = new mysqli($host, $username, $password, $database);
 
-if (!$conn) {
-    die("Connection failed: " . pg_last_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 // Get user input
-$username = pg_escape_string($_POST['username']); // Use pg_escape_string for security
-$password = pg_escape_string($_POST['password']); // Use pg_escape_string for security
+$username = $conn->real_escape_string($_POST['username']); // Use real_escape_string for security
+$password = $conn->real_escape_string($_POST['password']); // Use real_escape_string for security
 
 // Query the database to check user credentials
 $query = "SELECT * FROM login WHERE UserName='$username' AND Password='$password'";
-$result = pg_query($conn, $query); // Use pg_query for PostgreSQL
+$result = $conn->query($query);
 
-if ($result && pg_num_rows($result) == 1) {
+if ($result && $result->num_rows == 1) {
     // Successful login, redirect to your custom page
     $_SESSION['username'] = $username; // Store user information in the session
 
@@ -39,19 +39,19 @@ if ($result && pg_num_rows($result) == 1) {
 
 // Function to record a login event with a timestamp
 function recordLoginEvent($username, $conn) {
-    $username = pg_escape_string($username);
+    $username = $conn->real_escape_string($username);
     date_default_timezone_set('Asia/Kolkata');
     $timestamp = date('Y-m-d H:i:s'); // Get the current timestamp
     // Define the event type (login)
     $event_type = 'login';
     $sql = "INSERT INTO login_events (username, activity_time, event_type) VALUES ('$username', '$timestamp', '$event_type')";
 
-    $result = pg_query($conn, $sql);
+    $result = $conn->query($sql);
 
     if (!$result) {
-        echo "Error: " . pg_last_error($conn);
+        echo "Error: " . $conn->error;
     }
 }
 
-pg_close($conn);
+$conn->close();
 ?>
