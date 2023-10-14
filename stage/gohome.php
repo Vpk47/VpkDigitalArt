@@ -2,6 +2,8 @@
 // Start a session
 session_start();
 
+require_once 'config.php';
+
 // Check if the user is logged in
 if (isset($_SESSION['username'])) {
     // Get the username from the session
@@ -32,17 +34,23 @@ function recordLogoutEvent($username) {
 
     // Get the current timestamp
     $timestamp = date('Y-m-d H:i:s');
-    
+
     // Define the event type (logout)
     $event_type = 'logout';
 
-    // Insert the logout event into the login_events table
-    $username = mysqli_real_escape_string($conn, $username);
-    $sql = "INSERT INTO login_events (username, logout_time, event_type) VALUES ('$username', '$timestamp', '$event_type')";
+    // Create a prepared statement
+    $stmt = $conn->prepare("INSERT INTO login_events (username, logout_time, event_type) VALUES (?, ?, ?)");
 
-    
-    if ($conn->query($sql) !== TRUE) {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($stmt === false) {
+        die("Error in preparing the statement: " . $conn->error);
+    }
+
+    // Bind parameters and execute the statement
+    if ($stmt->bind_param("sss", $username, $timestamp, $event_type) && $stmt->execute()) {
+        // Success
+        $stmt->close();
+    } else {
+        echo "Error: " . $stmt->error;
     }
 
     // Close the database connection

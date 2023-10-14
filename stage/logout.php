@@ -21,12 +21,18 @@ function recordLogoutEvent($username, $conn) {
     date_default_timezone_set('Asia/Kolkata');
     $timestamp = date('Y-m-d H:i:s');
     $event_type = 'logout';
-    $username = $conn->real_escape_string($username);
-    $sql = "INSERT INTO login_events (username, activity_time, event_type) VALUES ('$username', '$timestamp', '$event_type')";
 
-    if ($conn->query($sql) === TRUE) {
-        // Destroy the session
-        session_destroy();
+    // Create a prepared statement
+    $stmt = $conn->prepare("INSERT INTO login_events (username, activity_time, event_type) VALUES (?, ?, ?)");
+
+    if ($stmt === false) {
+        die("Error in preparing the statement: " . $conn->error);
+    }
+
+    // Bind parameters and execute the statement
+    if ($stmt->bind_param("sss", $username, $timestamp, $event_type) && $stmt->execute()) {
+        // Success
+        $stmt->close();
     } else {
         // Handle the error gracefully
         // You can log the error, display an error message, or redirect the user to an error page
