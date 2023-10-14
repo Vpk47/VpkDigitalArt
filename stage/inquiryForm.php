@@ -139,7 +139,7 @@
                             }
                         } else {
                             echo '
-                            <form action="' . $_SERVER['PHP_SELF'] . '" method="post">
+                            <form action="' . htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8') . '" method="post">
                                 <label for="name">Name:</label>
                                 <input type="text" name="name" required><br><br>
 
