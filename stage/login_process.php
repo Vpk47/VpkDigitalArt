@@ -15,26 +15,22 @@ if (!$conn) {
     die("Connection failed: " . pg_last_error());
 }
 
-// Connection is successful
-
-
-
 // Get user input
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = pg_escape_string($_POST['username']); // Use pg_escape_string for security
+$password = pg_escape_string($_POST['password']); // Use pg_escape_string for security
 
 // Query the database to check user credentials
 $query = "SELECT * FROM login WHERE UserName='$username' AND Password='$password'";
-$result = $conn->query($query);
+$result = pg_query($conn, $query); // Use pg_query for PostgreSQL
 
-if ($result->num_rows == 1) {
+if ($result && pg_num_rows($result) == 1) {
     // Successful login, redirect to your custom page
     $_SESSION['username'] = $username; // Store user information in the session
-    
+
     // Record the login event
     $loginEventUsername = $username;
     recordLoginEvent($loginEventUsername, $conn);
-    
+
     header("Location: custom_page.php");
 } else {
     // Invalid login, redirect back to the login page
@@ -43,20 +39,19 @@ if ($result->num_rows == 1) {
 
 // Function to record a login event with a timestamp
 function recordLoginEvent($username, $conn) {
-    $username = mysqli_real_escape_string($conn, $username);
+    $username = pg_escape_string($username);
     date_default_timezone_set('Asia/Kolkata');
     $timestamp = date('Y-m-d H:i:s'); // Get the current timestamp
-    // Define the event type (logout)
+    // Define the event type (login)
     $event_type = 'login';
     $sql = "INSERT INTO login_events (username, activity_time, event_type) VALUES ('$username', '$timestamp', '$event_type')";
 
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Login event recorded successfully.";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    $result = pg_query($conn, $sql);
+
+    if (!$result) {
+        echo "Error: " . pg_last_error($conn);
     }
 }
 
-$conn->close();
+pg_close($conn);
 ?>

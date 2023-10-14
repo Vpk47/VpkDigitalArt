@@ -1,7 +1,6 @@
 <?php
-session_start(); // Start the session
+session_start();
 
-// Database connection settings (replace with your Hostinger MySQL credentials)
 require_once 'config.php';
 
 $host = getenv('DB_HOST');
@@ -15,54 +14,33 @@ if (!$conn) {
     die("Connection failed: " . pg_last_error());
 }
 
-// Connection is successful
-
-
-// Check if the user is logged in
 if (isset($_SESSION['username'])) {
-    
-    // Get the username from the session
     $username = $_SESSION['username'];
-    
-    // Record the logout event
-    $logoutEventUsername = $username;
-    recordLogoutEvent($logoutEventUsername, $conn);
-
+    recordLogoutEvent($username, $conn);
 }
 
-// Redirect the user to the login page or any other desired page
- // Replace "login.php" with the URL of your login page
-exit;
+// Redirect the user to the login page
+header("Location: login.php");
 
-// Function to record a logout event with a timestamp
 function recordLogoutEvent($username, $conn) {
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
     date_default_timezone_set('Asia/Kolkata');
-    $timestamp = date('Y-m-d H:i:s'); 
-    // Get the current timestamp
-    
-    // Define the event type (logout)
+    $timestamp = date('Y-m-d H:i:s');
     $event_type = 'logout';
-
-    // Insert the logout event into the login_events table
-    $username = mysqli_real_escape_string($conn, $username);
+    $username = pg_escape_string($username);
     $sql = "INSERT INTO login_events (username, activity_time, event_type) VALUES ('$username', '$timestamp', '$event_type')";
-    
-    if ($conn->query($sql) === TRUE) {
+
+    $result = pg_query($conn, $sql);
+
+    if ($result) {
         // Destroy the session
         session_destroy();
-        header("Location: login.php");
     } else {
-        // Destroy the session
+        // Handle the error gracefully
+        // You can log the error, display an error message, or redirect the user to an error page
         session_destroy();
         header("Location: index.php");
     }
 
-    // Close the database connection
-    $conn->close();
+    pg_close($conn);
 }
 ?>
