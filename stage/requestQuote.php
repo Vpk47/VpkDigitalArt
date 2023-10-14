@@ -116,40 +116,41 @@
               <div class="heading_container">
                     <h2>Request Quote </h2>
                     <?php
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            $recipient = "47@stage.vpk.org.in"; // Replace with your email address
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $recipient = "47@stage.vpk.org.in"; // Replace with your email address
 
-                            $name = $_POST["name"];
-                            $email = $_POST["email"];
-                            $message = $_POST["message"];
+                        $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
+                        $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+                        $message = htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8');
 
-                            $subject = "New Request from $name";
-                            $headers = "From: $email";
+                        $subject = "New Request from $name";
+                        $headers = "From: $email";
 
-                            $success = mail($recipient, $subject, $message, $headers);
+                        $success = mail($recipient, $subject, $message, $headers);
 
-                            if ($success) {
-                                echo "Your request has been sent successfully.";
-                            } else {
-                                echo "There was an error sending your request.";
-                            }
+                        if ($success) {
+                            echo "Your request has been sent successfully.";
                         } else {
-                            echo '
-                            <form action="' . $_SERVER['PHP_SELF'] . '" method="post">
-                                <label for="name">Name:</label>
-                                <input type="text" name="name" required>
-
-                                <label for="email">Email:</label>
-                                <input type="email" name="email" required>
-
-                                <label for="message">Request:</label>
-                                <textarea name="message" rows="4" required></textarea>
-
-                                <input type="submit" value="Submit Request">
-                            </form>
-                            ';
+                            echo "There was an error sending your request.";
                         }
-                        ?>
+                    } else {
+                        echo '
+                        <form action="' . htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8') . '" method="post">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" required>
+
+                            <label for="message">Request:</label>
+                            <textarea name="message" rows="4" required></textarea>
+
+                            <input type="submit" value="Submit Request">
+                        </form>
+                        ';
+                    }
+                    ?>
+
               </div>
             </div>
           </div>
