@@ -9,7 +9,7 @@ $username = getenv('DB_USERNAME');
 $password = getenv('DB_PASSWORD');
 $database = getenv('DB_DATABASE');
 
-$conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+$conn = new mysqli($host, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
