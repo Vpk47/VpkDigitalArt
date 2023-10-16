@@ -65,7 +65,6 @@
                   <a class="" href="about.php">About </a>
                   <a class="" href="gallery.php">Gallery </a>
                   <a class="" href="blog.php">Blog </a>
-                  <a class="" href="testimonial.php">Testimonial </a>
                   <a class="" href="calc.php">Solar Calculator</a>
                 </div>
               </div>
@@ -512,9 +511,6 @@
                   </li>
                   <li class="">
                     <a class="" href="blog.php">Blog </a>
-                  </li>
-                  <li class="">
-                    <a class="" href="testimonial.php">Testimonial </a>
                   </li>
                 </ul>
               </div>
