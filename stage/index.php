@@ -24,7 +24,6 @@
 
   <!-- Custom styles for this template -->
   <link href=" css/style.css" rel="stylesheet" />
-  <link href=" css/style.scss" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <script type="application/ld+json">
