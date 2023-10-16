@@ -482,7 +482,7 @@
                   </div>
                   <div class="detail-box">
                     <h6>
-                      47@vpk.org.in
+                      47@stage.vpk.org.in
                     </h6>
                   </div>
                 </a>
