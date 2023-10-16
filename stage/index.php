@@ -136,7 +136,7 @@
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-                <ol class="carousel-indicators">
+                <ol class="carousel-indicators" hidden=true>
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active li_one">01</li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1" class="li_two">02</li>
                   <li class="ol_design"></li>
