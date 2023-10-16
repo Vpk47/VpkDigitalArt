@@ -132,7 +132,7 @@
           </div>
           <div class="col-lg-8 px-0">
             <div class="img-box">
-              <img src="images/slider-img.png" alt="" />
+              <img src="images/slider-img.jpg" alt="" />
             </div>
           </div>
         </div>
