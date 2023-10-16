@@ -103,7 +103,7 @@
                       Digital Art
                     </h1>
                     <p>
-                      Building a Digital World
+                      Need a quote? We've got you covered. Request yours today.
                     </p>
                     <div>
                       <a href="requestQuote.php">
@@ -119,7 +119,7 @@
                       Digital Art
                     </h1>
                     <p>
-                      Building a Digital World
+                      Get in touch with us. Your questions, our answers.
                     </p>
                     <div>
                       <a href="inquiryForm.php">
@@ -278,7 +278,7 @@
                 Latest Blog
               </h2>
               <p>
-                It is a long established fact that a reader will be distracted by the readable content of a page
+                Explore Our World of Insights and Ideas
               </p>
               <a href="blog.php">
                 Read More
@@ -315,7 +315,7 @@
                     </div>
                   </div>
                   <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+                    Elegance meets technology in this digital masterpiece, where pixels dance in a symphony of visual delight.
                   </p>
                 </div>
               </div>
@@ -340,7 +340,7 @@
                     </div>
                   </div>
                   <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+                    Futuristic visions take shape, painting a world of endless possibilities in the realm of digital art.
                   </p>
                 </div>
               </div>
@@ -364,7 +364,7 @@
               What Says Customer
             </h2>
             <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page
+              Discover What Our Customers Love About Us
             </p>
           </div>
         </div>
@@ -423,7 +423,7 @@
                             Vpk 3
                           </h4>
                           <p>
-                            Discovering Vpk Digital Art transformed my art journey. It's a hub of insipration, collaboration, and support that elevated my creativity.
+                            Discovering Vpk Digital Art transformed my art journey. It's a hub of inspiration, collaboration, and support that elevated my creativity.
                           </p>
                           <img src="images/quote.png" alt="" />
                         </div>
