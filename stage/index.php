@@ -6,12 +6,13 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Site Metas -->
   <meta name="author" content="Vpk" />
   <title>Vpk Digital Art - Explore the limitless world of digital art</title>
-  <meta name="description" content="Vpk Digital Art is a company that offers digital art services and products. We are passionate about creating stunning and original artworks that embrace the pixels and tell a story worth sharing.">
-  <meta name="keywords" content="digital art, pixel art, art services, art products, creative, innovative, Digital painting, Pixel art, Digital illustration, Digital collage">
+  <meta name="description" content="Explore a world of creativity and imagination with our digital art gallery. Discover stunning digital artworks from talented artists, each piece telling a unique visual story. Immerse yourself in the vibrant world of digital art today.">
+  <meta name="keywords" content="digital art, pixel art, art services, art products, creative, innovative, Digital painting, Pixel art, Digital illustration, Digital collage, Digital Art Gallery, Digital Artworks, Contemporary Art, Visual Art, Creative Design, Online Art Exhibition, Modern Art, Digital Artists, Abstract Art, Digital Art Creations, Artistic Expression, Visual Storytelling, Digital Art Prints">
+  <meta name="robots" content="index, follow" />
 
   <title>Vpk Digital Art</title>
 
@@ -25,6 +26,21 @@
   <link href=" css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "name": "Vpk Digital Art",
+    "description": "Explore a world of creativity and imagination with our digital art gallery. Discover stunning digital artworks from talented artists, each piece telling a unique visual story. Immerse yourself in the vibrant world of digital art today.",
+    "url": "https://stage.vpk.org.in/",  // Replace with your actual website URL
+    "author": {
+      "@type": "Person",
+      "name": "Vpk"
+    },
+    "keywords": "digital art, pixel art, art services, art products, creative, innovative, Digital painting, Pixel art, Digital illustration, Digital collage, Digital Art Gallery, Digital Artworks, Contemporary Art, Visual Art, Creative Design, Online Art Exhibition, Modern Art, Digital Artists, Abstract Art, Digital Art Creations, Artistic Expression, Visual Storytelling, Digital Art Prints"
+  }
+  </script>
+
 </head>
 
 <body>
@@ -185,7 +201,7 @@
               Our Gallery
             </h2>
             <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page
+              In the realm of digital art, one can easily get captivated by the visual allure and creativity on display.
             </p>
             <a href="gallery.php">
               See More
