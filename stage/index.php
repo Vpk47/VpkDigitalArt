@@ -99,11 +99,10 @@
                 <div class="carousel-item active">
                   <div class="detail-box">
                     <h1>
-                      Vpk <br />
-                      Digital Art
+
                     </h1>
                     <p>
-                      Need a quote? We've got you covered. Request yours today.
+                      Get a Custom Quote for Your Digital Art Needs
                     </p>
                     <div>
                       <a href="requestQuote.php">
@@ -115,8 +114,7 @@
                 <div class="carousel-item">
                   <div class="detail-box">
                     <h1>
-                      Vpk <br />
-                      Digital Art
+
                     </h1>
                     <p>
                       Get in touch with us. Your questions, our answers.
