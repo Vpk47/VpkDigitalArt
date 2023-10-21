@@ -174,6 +174,14 @@ if (isset($_POST['calculate_btn'])) {
                                     <label for="solar_panel_installation_location">Solar Panel Installation Pincode</label>
                                     <input type="number" class="form-control" id="solar_panel_installation_location" name="solar_panel_installation_location" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="tariff">Type of Resident</label>
+                                    <select name="tariff" id="tariff">
+                                        <option value="4">Residential </option>
+                                        <option value="8">Commercial </option>
+                                        <option value="7">Industrial</option>
+                                    </select>
+                                </div>
                                 <button type="submit" class="btn btn-primary" id="calculate_btn" name="calculate_btn">Calculate</button>
                             </form>
                         </div>
