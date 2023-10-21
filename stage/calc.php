@@ -1,39 +1,39 @@
 <?php
-    $showModal = false;
-    $results = "";
+$showModal = false;
+$results = "";
 
-    if (isset($_POST['calculate_btn'])) {
-        $showModal = true;
+if (isset($_POST['calculate_btn'])) {
+    $showModal = true;
 
-        // Get form data
-        $energy_consumption = floatval($_POST['energy_consumption']);
-        $solar_panel_efficiency = 0.9;
-        $sunlight_hours = 5;
+    // Get form data
+    $energy_consumption = floatval($_POST['energy_consumption']);
+    $solar_panel_efficiency = 0.9;
+    $sunlight_hours = 5;
 
-        // Calculate daily solar power generation
-        $daily_solar_power = ($energy_consumption / (30 * $sunlight_hours * $solar_panel_efficiency));
+    // Calculate daily solar power generation
+    $daily_solar_power = ($energy_consumption / (30 * $sunlight_hours * $solar_panel_efficiency));
 
-        // Calculate monthly solar power generation
-        $monthly_solar_power_generation = $energy_consumption;
+    // Calculate monthly solar power generation
+    $monthly_solar_power_generation = $energy_consumption;
 
-        // Calculate yearly solar power generation
-        $yearly_solar_power_generation = $monthly_solar_power_generation * 12;
+    // Calculate yearly solar power generation
+    $yearly_solar_power_generation = $monthly_solar_power_generation * 12;
 
-        $solar_capacity = $daily_solar_power;
-        $total_cost = $solar_capacity * 70000;
-        $capital_subsidy = $total_cost * .3;
-        $Energy_savings = $solar_capacity * 5 * 300 * 4;
-        $daily_solar_power_generation = $solar_capacity * 5;
+    $solar_capacity = $daily_solar_power;
+    $total_cost = $solar_capacity * 70000;
+    $capital_subsidy = $total_cost * 0.3;
+    $Energy_savings = $solar_capacity * 5 * 300 * 4;
+    $daily_solar_power_generation = $solar_capacity * 5;
 
-        // Store the results in a variable
-        $results .= "Estimated Solar Power Capacity: " . round($daily_solar_power, 2) . " kW<br>";
-        $results .= "Estimated Solar Power Generation (Daily): " . round($daily_solar_power_generation, 2) . " kWh<br>";
-        $results .= "Estimated Solar Power Cost: " . round($total_cost, 0) . " Rs<br>";
-        $results .= "Estimated Capital Subsidy: " . round($capital_subsidy, 0) . " Rs<br>";
-        $results .= "Estimated Energy Savings (Yearly): " . round($Energy_savings, 0) . " Rs<br>";
-        // echo $results;
-        echo "<script>$('#resultsModal').modal('show');</script>";
-    }
+    // Store the results in a variable
+    $results .= '<table class="table">';
+    $results .= '<tr><td>Estimated Solar Power Capacity:</td><td>' . round($daily_solar_power, 2) . ' kW</td></tr>';
+    $results .= '<tr><td>Estimated Solar Power Generation (Daily):</td><td>' . round($daily_solar_power_generation, 2) . ' kWh</td></tr>';
+    $results .= '<tr><td>Estimated Solar Power Cost:</td><td>' . round($total_cost, 0) . ' Rs</td></tr>';
+    $results .= '<tr><td>Estimated Capital Subsidy:</td><td>' . round($capital_subsidy, 0) . ' Rs</td></tr>';
+    $results .= '<tr><td>Estimated Energy Savings (Yearly):</td><td>' . round($Energy_savings, 0) . ' Rs</td></tr>';
+    $results .= '</table>';
+}
 ?>
 
 
@@ -150,26 +150,12 @@
         </section>
     </div>
     <!-- Bootstrap Modal -->
-    <div class="modal fade custom-modal" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="resultsModalLabel">Solar Calculator Results</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <?php echo $results; ?>
-                </div>
-
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+    <div class="container">
+            <?php if ($showModal): ?>
+                <h3>Solar Calculator Results</h3>
+                <?php echo $results; ?>
+            <?php endif; ?>
         </div>
-    </div>
    <!-- info section -->
     
   <section class="info_section ">
