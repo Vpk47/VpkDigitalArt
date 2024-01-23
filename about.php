@@ -26,7 +26,7 @@
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="sub_page">
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -43,15 +43,15 @@
               </div>
               <div id="myNav" class="overlay">
                 <div class="overlay-content">
-                  <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  <a class="" href="about.html">About </a>
-                  <a class="" href="gallery.html">Gallery </a>
-                  <a class="" href="blog.html">Blog </a>
-                  <a class="" href="testimonial.html">Testimonial </a>
+                  <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="" href="about.php">About </a>
+                  <a class="" href="gallery.php">Gallery </a>
+                  <a class="" href="blog.php">Blog </a>
+                  <a class="" href="testimonial.php">Testimonial </a>
                 </div>
               </div>
             </div>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <span>
                 Vpk Digital Art
               </span>
@@ -69,111 +69,68 @@
       </div>
     </header>
     <!-- end header section -->
-
-
   </div>
 
+  <div class="layout_padding">
+    <!-- about section -->
 
-  <!-- client section -->
-
-  <section class="client_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 ml-auto">
-          <div class="heading_container">
-            <h2>
-              What Says Customer
-            </h2>
-            <p>
-              Discover what our clients and partners have to say about their experiences with us. Read their testimonials and find out how we've made a postive impact on their lives and business.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="client_container">
-      <div class="client_bg">
-        <img src="images/gallery-bg.png" alt="" />
-      </div>
+    <section class="about_section layout_padding-bottom">
       <div class="container">
-        <div class="client_box">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="box b1">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="client_content-box layout_padding">
-                        <div class="img-box">
-                          <img src="images/client.png" alt="" />
-                        </div>
-                        <div class="detail-box">
-                          <h4>
-                            Vpk
-                          </h4>
-                          <p>
-                            Embrace the pixels and let your creativity flow. In the digital realm, the possibilities are endless.
-                          </p>
-                          <img src="images/quote.png" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="client_content-box layout_padding">
-                        <div class="img-box">
-                          <img src="images/client.png" alt="" />
-                        </div>
-                        <div class="detail-box">
-                          <h4>
-                            Vpk 2
-                          </h4>
-                          <p>
-                            Your Art is your Legacy in the digital age. Make it a story worth sharing.
-                          </p>
-                          <img src="images/quote.png" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="client_content-box layout_padding">
-                        <div class="img-box">
-                          <img src="images/client.png" alt="" />
-                        </div>
-                        <div class="detail-box">
-                          <h4>
-                            Vpk 3
-                          </h4>
-                          <p>
-                            Discovering Vpk Digital Art transformed my art journey. It's a hub of insipration, collaboration, and support that elevated my creativity.
-                          </p>
-                          <img src="images/quote.png" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="box b2">
-                <div class="camera_img-box">
-                  <img src="images/camera.png" alt="" />
-                </div>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  About Studio
+                </h2>
+                <p>
+                    At Vpk Digital Art, we are passionate about the limitless world of digital art. Our platform is dedicated to showcasing the creativity, talent, and innovation of digital artists from around the globe. Whether you're an art enthusiast, a fellow artist or simply curious about the dynamic medium, you've come to the right place.
+                </p>
+                <h4>
+                  Our Mission
+                </h4>
+                <p>
+                    Our mission is simple yet profound: to celebrate and promote the incredible artistry that emerges when technology and creativity collide. We provide a virtual canvas for artists to share their digital masterpieces and connect with a diverse and appreciative audience.
+                </p>
+                <h4>
+                  Who We Are
+                </h4>
+                <p>
+                    We are a team of art lovers, tech enthusiasts, and creatives who understand the power of digital medium. Our collective background spans from traditional art to cutting-edge technology, and we're on a mission to bridge the gap between these world. We're here to curate, inspire, and ciltivate a community of digital art enthusiasts.
+                </p>
+                <h4>
+                  What We Offer
+                </h4>
+                    <li>
+                        Art Gallery
+                    </li>
+                    <li>
+                        Artist Profiles
+                    </li>
+                    <li>
+                        Community
+                    </li>
+                <a href="index.php">
+                  Home
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="img-box">
+        <div class="play_btn">
+          <a href="#">
+            <img src="images/play.png" alt="" />
+          </a>
+        </div>
+        <img src="images/about-img.png" class="about-img" alt="" />
+      </div>
+    </section>
 
-  <!-- end client section -->
+    <!-- end about section -->
+  </div>
+
 
   <!-- info section -->
 
@@ -225,19 +182,19 @@
               <div class="info_link-box">
                 <ul>
                   <li class=" active">
-                    <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="">
-                    <a class="" href="about.html">About </a>
+                    <a class="" href="about.php">About </a>
                   </li>
                   <li class="">
-                    <a class="" href="gallery.html">Gallery </a>
+                    <a class="" href="gallery.php">Gallery </a>
                   </li>
                   <li class="">
-                    <a class="" href="blog.html">Blog </a>
+                    <a class="" href="blog.php">Blog </a>
                   </li>
                   <li class="">
-                    <a class="" href="testimonial.html">Testimonial </a>
+                    <a class="" href="testimonial.php">Testimonial </a>
                   </li>
                 </ul>
               </div>
@@ -272,7 +229,7 @@
   <!-- footer section -->
   <footer class="footer_section ">
     <div class="container">
-     <p>
+      <p>
         &copy; <span id="displayYear"></span> All Rights Reserved. ©Vpk Digital Art 
       </p>
     </div>

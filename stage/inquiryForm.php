@@ -1,47 +1,8 @@
-<?php
-$showModal = false;
-$results = "";
-
-if (isset($_POST['calculate_btn'])) {
-    $showModal = true;
-
-    // Get form data
-    $energy_consumption = floatval($_POST['energy_consumption']);
-    $solar_panel_efficiency = 0.9;
-    $sunlight_hours = 5;
-
-    // Calculate daily solar power generation
-    $daily_solar_power = ($energy_consumption / (30 * $sunlight_hours * $solar_panel_efficiency));
-
-    // Calculate monthly solar power generation
-    $monthly_solar_power_generation = $energy_consumption;
-
-    // Calculate yearly solar power generation
-    $yearly_solar_power_generation = $monthly_solar_power_generation * 12;
-
-    $solar_capacity = $daily_solar_power;
-    $total_cost = $solar_capacity * 70000;
-    $capital_subsidy = $total_cost * 0.3;
-    $Energy_savings = $solar_capacity * 5 * 300 * 4;
-    $daily_solar_power_generation = $solar_capacity * 5;
-
-    // Store the results in a variable
-    $results .= '<table class="table">';
-    $results .= '<tr><td>Estimated Solar Power Capacity:</td><td>' . round($daily_solar_power, 2) . ' kW</td></tr>';
-    $results .= '<tr><td>Estimated Solar Power Generation (Daily):</td><td>' . round($daily_solar_power_generation, 2) . ' kWh</td></tr>';
-    $results .= '<tr><td>Estimated Solar Power Cost:</td><td>' . round($total_cost, 0) . ' Rs</td></tr>';
-    $results .= '<tr><td>Estimated Capital Subsidy:</td><td>' . round($capital_subsidy, 0) . ' Rs</td></tr>';
-    $results .= '<tr><td>Estimated Energy Savings (Yearly):</td><td>' . round($Energy_savings, 0) . ' Rs</td></tr>';
-    $results .= '</table>';
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Basic -->
+  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
@@ -51,7 +12,7 @@ if (isset($_POST['calculate_btn'])) {
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Solar Calculator</title>
+  <title>Request Form</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -64,54 +25,45 @@ if (isset($_POST['calculate_btn'])) {
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <style>
-        .custom-modal .modal-body {
-            background-color: black;
-            color: white;
-        }
-        .custom-modal .close {
-            color: white;
-        }
-        .custom-modal .close:hover {
-            color: #aaa;
-        }
-    </style>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+      h2 {
+                    text-align: center;
+                }
 
-        table, th, td {
-            border: 1px solid #000;
-        }
+                form {
+                    max-width: 400px;
+                    margin: 0 auto;
+                }
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                }
 
-        th {
-            background-color: #007BFF;
-            color: #fff;
-        }
+                input[type="text"],
+                input[type="email"],
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-
-        tr:hover {
-            background-color: #ccc;
-        }
-    </style>
+                input[type="submit"] {
+                    background-color: #007BFF;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+  </style>
 
 </head>
 
-<body>
-    <!-- Header Section (You can use your website's header) -->
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container d-block">
@@ -127,12 +79,10 @@ if (isset($_POST['calculate_btn'])) {
               <div id="myNav" class="overlay">
                 <div class="overlay-content">
                   <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
-                  <a class="" href="login.php">Login </a>
                   <a class="" href="about.php">About </a>
                   <a class="" href="gallery.php">Gallery </a>
                   <a class="" href="blog.php">Blog </a>
                   <a class="" href="testimonial.php">Testimonial </a>
-                  <a class="" href="calc.php">Solar Calculator</a>
                 </div>
               </div>
             </div>
@@ -142,7 +92,7 @@ if (isset($_POST['calculate_btn'])) {
               </span>
             </a>
             <div class="user_option">
-              <a href="login.php">
+              <a href="#">
                 login
               </a>
               <form class="form-inline ">
@@ -153,52 +103,79 @@ if (isset($_POST['calculate_btn'])) {
         </nav>
       </div>
     </header>
-    
-    
+    <!-- end header section -->
+  </div>
 
-    <!-- Main Content Section -->
-   
-    <div class="layout_padding-bottom">
-        <section class="solar_calculator_section layout_padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="calculator_box">
-                            <h2>Solar Calculator</h2>
-                            <form id="solar_calculator_form" method="post" action="">
-                                 <div class="form-group">
-                                    <label for="energy_consumption">Energy Consumption (kWh/Month)</label>
-                                    <input type="number" class="form-control" id="energy_consumption" name="energy_consumption" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="solar_panel_installation_location">Solar Panel Installation Pincode</label>
-                                    <input type="number" class="form-control" id="solar_panel_installation_location" name="solar_panel_installation_location" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tariff">Type of Resident</label>
-                                    <select name="tariff" id="tariff">
-                                        <option value="4">Residential </option>
-                                        <option value="8">Commercial </option>
-                                        <option value="7">Industrial</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-primary" id="calculate_btn" name="calculate_btn">Calculate</button>
+  <div class="layout_padding">
+    <!-- about section -->
+
+    <section class="about_section layout_padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="detail-box">
+              <div class="heading_container">
+                    <h2>Inquiry Form</h2>
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            $name = htmlspecialchars($_POST["name"]);
+                            $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+                            $message = htmlspecialchars($_POST["message"]);
+
+                            $recipient = $email; // Replace with your email address
+                            $subject = "New Inquiry from $name";
+                            $headers = "From: 47@stage.vpk.org.in"; // Replace with your predefined email address
+
+                            // Sample content
+                            $sample_content = "Thank you for your inquiry, $name. We will get back to you shortly.";
+
+                            // Send the email
+                            $success = mail($recipient, $subject, $sample_content, $headers);
+
+                            if ($success) {
+                                echo "Your inquiry has been sent successfully.";
+                            } else {
+                                echo "There was an error sending your inquiry.";
+                            }
+                        } else {
+                            echo '
+                            <form action="' . htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8') . '" method="post">
+                                <label for="name">Name:</label>
+                                <input type="text" name="name" required><br><br>
+
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" required><br><br>
+
+                                <label for="message">Message:</label><br>
+                                <textarea name="message" rows="4" required></textarea><br><br>
+
+                                <input type="submit" value="Submit Inquiry">
                             </form>
-                        </div>
-                    </div>
-                </div>
+                            ';
+                        }
+                        ?>
+
+              </div>
             </div>
-        </section>
-    </div>
-    <!-- Bootstrap Modal -->
-    <div class="container">
-            <?php if ($showModal): ?>
-                <h3>Solar Calculator Results</h3>
-                <?php echo $results; ?>
-            <?php endif; ?>
+          </div>
         </div>
-   <!-- info section -->
-    
+      </div>
+      <div class="img-box">
+        <div class="play_btn">
+          <a href="#">
+            <img src="images/play.png" alt="" />
+          </a>
+        </div>
+        <img src="images/about-img.png" class="about-img" alt="" />
+      </div>
+    </section>
+
+    <!-- end about section -->
+  </div>
+
+
+  <!-- info section -->
+
   <section class="info_section ">
     <div class="info_container layout_padding-top">
       <div class="container">
@@ -246,7 +223,7 @@ if (isset($_POST['calculate_btn'])) {
             <div class="col-md-2 col-lg-3">
               <div class="info_link-box">
                 <ul>
-                  <li class=" ">
+                  <li class=" active">
                     <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="">
@@ -305,14 +282,6 @@ if (isset($_POST['calculate_btn'])) {
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
-    <script>
-    <?php if ($showModal): ?>
-        // Show the modal
-        $('#resultsModal').modal('show');
-    <?php endif; ?>
-</script>
-
-
 </body>
 
 </html>

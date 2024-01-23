@@ -21,7 +21,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- Custom styles for this template -->
-  <link href=" css/style.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
@@ -43,15 +43,15 @@
               </div>
               <div id="myNav" class="overlay">
                 <div class="overlay-content">
-                  <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  <a class="" href="about.html">About </a>
-                  <a class="" href="gallery.html">Gallery </a>
-                  <a class="" href="blog.html">Blog </a>
-                  <a class="" href="testimonial.html">Testimonial </a>
+                  <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="" href="about.php">About </a>
+                  <a class="" href="gallery.php">Gallery </a>
+                  <a class="" href="blog.php">Blog </a>
+                  <a class="" href="testimonial.php">Testimonial </a>
                 </div>
               </div>
             </div>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <span>
                 Vpk Digital Art
               </span>
@@ -69,84 +69,62 @@
       </div>
     </header>
     <!-- end header section -->
-
   </div>
 
+  <div class="layout_padding-bottom">
 
-  <!-- gallery section -->
-  <section class="gallery_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 ml-auto">
-          <div class="heading_container">
-            <h2>
-              Our Gallery
-            </h2>
-            <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page
-            </p>
-            <a href="index.html">
-              Home
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="gallery_container">
-      <div class="gallery_bg">
-        <img src="images/gallery-bg.png" alt="" />
-      </div>
+    <!-- blog section -->
+
+    <section class="blog_section layout_padding">
       <div class="container">
-        <div class="gallery_box">
-          <div class="box b1">
-            <div class="img-box">
-              <img src="images/gallery-1.jpg" alt="" />
-              <h5>
-                photography
-              </h5>
-            </div>
-          </div>
-          <div class="box b2">
-            <div class="img-box">
-              <img src="images/gallery-2.jpg" alt="" />
-              <h5>
-                photography
-              </h5>
-            </div>
-            <div class="img-box">
-              <img src="images/gallery-3.jpg" alt="" />
-              <h5>
-                photography
-              </h5>
-            </div>
-          </div>
-          <div class="box b3">
-            <div class="img-box">
-              <img src="images/gallery-4.jpg" alt="" />
-              <h5>
-                photography
-              </h5>
-            </div>
-            <div class="img-box">
-              <img src="images/gallery-5.jpg" alt="" />
-              <h5>
-                photography
-              </h5>
-            </div>
-          </div>
-          <div class="box b4">
-            <div class="img-box">
-              <img src="images/gallery-6.jpg" alt="" />
-              <h5>
-                photography
-              </h5>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>Login Success</h2>
+                    <!--<form method="post" action="login_process.php">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" required><br><br>
+                        <label for="password">Password: </label>
+                        <input type="password" name="password" required><br><br>
+                        <input type="submit" value="Login">
+                    </form>-->
+                <a href="logout.php">
+                  Logout
+                </a>
+                <a href="gohome.php">
+                  Home
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- end gallery section -->
+      <div class="blog_container">
+        <div class="blog_bg">
+          <img src="images/gallery-bg.png" alt="" />
+        </div>
+        <div class="container">
+          <div class="blog_box">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="box b1">
+                  <div class="img-box">
+                    <img src="images/blog1.jpg" alt="" />
+                  </div>
+                  <div class="blog-detail">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end blog section -->
+  </div>
 
   <!-- info section -->
 
@@ -197,20 +175,20 @@
             <div class="col-md-2 col-lg-3">
               <div class="info_link-box">
                 <ul>
-                  <li class=" ">
-                    <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <li class=" active">
+                    <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="">
-                    <a class="" href="about.html">About </a>
+                    <a class="" href="about.php">About </a>
                   </li>
                   <li class="">
-                    <a class="" href="gallery.html">Gallery </a>
+                    <a class="" href="gallery.php">Gallery </a>
                   </li>
                   <li class="">
-                    <a class="" href="blog.html">Blog </a>
+                    <a class="" href="blog.php">Blog </a>
                   </li>
                   <li class="">
-                    <a class="" href="testimonial.html">Testimonial </a>
+                    <a class="" href="testimonial.php">Testimonial </a>
                   </li>
                 </ul>
               </div>
@@ -246,7 +224,7 @@
   <footer class="footer_section ">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved. ©Vpk Digital Art 
+        &copy; <span id="displayYear"></span> All Rights Reserved. &copy;Vpk Digital Art 
       </p>
     </div>
   </footer>

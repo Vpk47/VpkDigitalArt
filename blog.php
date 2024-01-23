@@ -43,15 +43,15 @@
               </div>
               <div id="myNav" class="overlay">
                 <div class="overlay-content">
-                  <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  <a class="" href="about.html">About </a>
-                  <a class="" href="gallery.html">Gallery </a>
-                  <a class="" href="blog.html">Blog </a>
-                  <a class="" href="testimonial.html">Testimonial </a>
+                  <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="" href="about.php">About </a>
+                  <a class="" href="gallery.php">Gallery </a>
+                  <a class="" href="blog.php">Blog </a>
+                  <a class="" href="testimonial.php">Testimonial </a>
                 </div>
               </div>
             </div>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <span>
                 Vpk Digital Art
               </span>
@@ -71,46 +71,23 @@
     <!-- end header section -->
   </div>
 
-  <div class="layout_padding">
-    <!-- about section -->
+  <div class="layout_padding-bottom">
 
-    <section class="about_section layout_padding-bottom">
+    <!-- blog section -->
+
+    <section class="blog_section layout_padding">
       <div class="container">
         <div class="row">
           <div class="col-md-5">
             <div class="detail-box">
               <div class="heading_container">
                 <h2>
-                  About Studio
+                  Latest Blog
                 </h2>
                 <p>
-                    At Vpk Digital Art, we are passionate about the limitless world of digital art. Our platform is dedicated to showcasing the creativity, talent, and innovation of digital artists from around the globe. Whether you're an art enthusiast, a fellow artist or simply curious about the dynamic medium, you've come to the right place.
+                  Blog
                 </p>
-                <h4>
-                  Our Mission
-                </h4>
-                <p>
-                    Our mission is simple yet profound: to celebrate and promote the incredible artistry that emerges when technology and creativity collide. We provide a virtual canvas for artists to share their digital masterpieces and connect with a diverse and appreciative audience.
-                </p>
-                <h4>
-                  Who We Are
-                </h4>
-                <p>
-                    We are a team of art lovers, tech enthusiasts, and creatives who understand the power of digital medium. Our collective background spans from traditional art to cutting-edge technology, and we're on a mission to bridge the gap between these world. We're here to curate, inspire, and ciltivate a community of digital art enthusiasts.
-                </p>
-                <h4>
-                  What We Offer
-                </h4>
-                    <li>
-                        Art Gallery
-                    </li>
-                    <li>
-                        Artist Profiles
-                    </li>
-                    <li>
-                        Community
-                    </li>
-                <a href="index.html">
+                <a href="index.php">
                   Home
                 </a>
               </div>
@@ -118,19 +95,71 @@
           </div>
         </div>
       </div>
-      <div class="img-box">
-        <div class="play_btn">
-          <a href="#">
-            <img src="images/play.png" alt="" />
-          </a>
+      <div class="blog_container">
+        <div class="blog_bg">
+          <img src="images/gallery-bg.png" alt="" />
         </div>
-        <img src="images/about-img.png" class="about-img" alt="" />
+        <div class="container">
+          <div class="blog_box">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="box b1">
+                  <div class="img-box">
+                    <img src="images/blog1.jpg" alt="" />
+                  </div>
+                  <div class="blog-detail">
+                    <div class="blog_title">
+                      <h5>
+                        Best Art
+                      </h5>
+                      <div class="blog_post">
+                        <h6>
+                          Post By: Vpk
+                        </h6>
+                        <h6>
+                          16-01-2020
+                        </h6>
+                      </div>
+                    </div>
+                    <p>
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="box b2">
+                  <div class="img-box">
+                    <img src="images/blog2.jpg" alt="" />
+                  </div>
+                  <div class="blog-detail">
+                    <div class="blog_title">
+                      <h5>
+                        Artwork
+                      </h5>
+                      <div class="blog_post">
+                        <h6>
+                          Post By: Vpk
+                        </h6>
+                        <h6>
+                          16-01-2020
+                        </h6>
+                      </div>
+                    </div>
+                    <p>
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- end about section -->
+    <!-- end blog section -->
   </div>
-
 
   <!-- info section -->
 
@@ -182,19 +211,19 @@
               <div class="info_link-box">
                 <ul>
                   <li class=" active">
-                    <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="">
-                    <a class="" href="about.html">About </a>
+                    <a class="" href="about.php">About </a>
                   </li>
                   <li class="">
-                    <a class="" href="gallery.html">Gallery </a>
+                    <a class="" href="gallery.php">Gallery </a>
                   </li>
                   <li class="">
-                    <a class="" href="blog.html">Blog </a>
+                    <a class="" href="blog.php">Blog </a>
                   </li>
                   <li class="">
-                    <a class="" href="testimonial.html">Testimonial </a>
+                    <a class="" href="testimonial.php">Testimonial </a>
                   </li>
                 </ul>
               </div>

@@ -303,12 +303,14 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
 }
 
 .navbar-brand span {
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .custom_nav-container {

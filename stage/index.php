@@ -6,11 +6,13 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="author" content="Vpk" />
+  <title>Vpk Digital Art - Explore the limitless world of digital art</title>
+  <meta name="description" content="Explore a world of creativity and imagination with our digital art gallery. Discover stunning digital artworks from talented artists, each piece telling a unique visual story. Immerse yourself in the vibrant world of digital art today.">
+  <meta name="keywords" content="digital art, pixel art, art services, art products, creative, innovative, Digital painting, Pixel art, Digital illustration, Digital collage, Digital Art Gallery, Digital Artworks, Contemporary Art, Visual Art, Creative Design, Online Art Exhibition, Modern Art, Digital Artists, Abstract Art, Digital Art Creations, Artistic Expression, Visual Storytelling, Digital Art Prints">
+  <meta name="robots" content="index, follow" />
 
   <title>Vpk Digital Art</title>
 
@@ -24,6 +26,21 @@
   <link href=" css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "name": "Vpk Digital Art",
+    "description": "Explore a world of creativity and imagination with our digital art gallery. Discover stunning digital artworks from talented artists, each piece telling a unique visual story. Immerse yourself in the vibrant world of digital art today.",
+    "url": "https://stage.vpk.org.in/",  // Replace with your actual website URL
+    "author": {
+      "@type": "Person",
+      "name": "Vpk"
+    },
+    "keywords": "digital art, pixel art, art services, art products, creative, innovative, Digital painting, Pixel art, Digital illustration, Digital collage, Digital Art Gallery, Digital Artworks, Contemporary Art, Visual Art, Creative Design, Online Art Exhibition, Modern Art, Digital Artists, Abstract Art, Digital Art Creations, Artistic Expression, Visual Storytelling, Digital Art Prints"
+  }
+  </script>
+
 </head>
 
 <body>
@@ -48,14 +65,13 @@
                   <a class="" href="about.php">About </a>
                   <a class="" href="gallery.php">Gallery </a>
                   <a class="" href="blog.php">Blog </a>
-                  <a class="" href="testimonial.php">Testimonial </a>
                   <a class="" href="calc.php">Solar Calculator</a>
                 </div>
               </div>
             </div>
             <a class="navbar-brand" href="index.php">
               <span>
-                Vpk Digital Art ..
+                Vpk Digital Art
               </span>
             </a>
             <div class="user_option">
@@ -82,14 +98,13 @@
                 <div class="carousel-item active">
                   <div class="detail-box">
                     <h1>
-                      Vpk <br />
-                      Digital Art
+
                     </h1>
                     <p>
-                      Building a Digital World
+                      Get a Custom Quote for Your Digital Art Needs
                     </p>
                     <div>
-                      <a href="#">
+                      <a href="requestQuote.php">
                         Request A Quote
                       </a>
                     </div>
@@ -98,15 +113,14 @@
                 <div class="carousel-item">
                   <div class="detail-box">
                     <h1>
-                      Vpk <br />
-                      Digital Art
+
                     </h1>
                     <p>
-                      Building a Digital World
+                      Get in touch with us. Your questions, our answers.
                     </p>
                     <div>
-                      <a href="#">
-                        Request A Quote
+                      <a href="inquiryForm.php">
+                        Inquire
                       </a>
                     </div>
                   </div>
@@ -121,7 +135,7 @@
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-                <ol class="carousel-indicators">
+                <ol class="carousel-indicators" hidden=true>
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active li_one">01</li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1" class="li_two">02</li>
                   <li class="ol_design"></li>
@@ -184,7 +198,7 @@
               Our Gallery
             </h2>
             <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page
+              In the realm of digital art, one can easily get captivated by the visual allure and creativity on display.
             </p>
             <a href="gallery.php">
               See More
@@ -261,7 +275,7 @@
                 Latest Blog
               </h2>
               <p>
-                It is a long established fact that a reader will be distracted by the readable content of a page
+                Explore Our World of Insights and Ideas
               </p>
               <a href="blog.php">
                 Read More
@@ -298,7 +312,7 @@
                     </div>
                   </div>
                   <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+                    Elegance meets technology in this digital masterpiece, where pixels dance in a symphony of visual delight.
                   </p>
                 </div>
               </div>
@@ -323,7 +337,7 @@
                     </div>
                   </div>
                   <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+                    Futuristic visions take shape, painting a world of endless possibilities in the realm of digital art.
                   </p>
                 </div>
               </div>
@@ -347,7 +361,7 @@
               What Says Customer
             </h2>
             <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page
+              Discover What Our Customers Love About Us
             </p>
           </div>
         </div>
@@ -406,7 +420,7 @@
                             Vpk 3
                           </h4>
                           <p>
-                            Discovering Vpk Digital Art transformed my art journey. It's a hub of insipration, collaboration, and support that elevated my creativity.
+                            Discovering Vpk Digital Art transformed my art journey. It's a hub of inspiration, collaboration, and support that elevated my creativity.
                           </p>
                           <img src="images/quote.png" alt="" />
                         </div>
@@ -467,7 +481,7 @@
                   </div>
                   <div class="detail-box">
                     <h6>
-                      47@vpk.org.in
+                      47@stage.vpk.org.in
                     </h6>
                   </div>
                 </a>
@@ -497,9 +511,6 @@
                   </li>
                   <li class="">
                     <a class="" href="blog.php">Blog </a>
-                  </li>
-                  <li class="">
-                    <a class="" href="testimonial.php">Testimonial </a>
                   </li>
                 </ul>
               </div>

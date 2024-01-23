@@ -21,7 +21,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- Custom styles for this template -->
-  <link href=" css/style.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
@@ -43,15 +43,15 @@
               </div>
               <div id="myNav" class="overlay">
                 <div class="overlay-content">
-                  <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  <a class="" href="about.html">About </a>
-                  <a class="" href="gallery.html">Gallery </a>
-                  <a class="" href="blog.html">Blog </a>
-                  <a class="" href="testimonial.html">Testimonial </a>
+                  <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="" href="about.php">About </a>
+                  <a class="" href="gallery.php">Gallery </a>
+                  <a class="" href="blog.php">Blog </a>
+                  <a class="" href="testimonial.php">Testimonial </a>
                 </div>
               </div>
             </div>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <span>
                 Vpk Digital Art
               </span>
@@ -81,13 +81,15 @@
           <div class="col-md-5">
             <div class="detail-box">
               <div class="heading_container">
-                <h2>
-                  Latest Blog
-                </h2>
-                <p>
-                  Blog
-                </p>
-                <a href="index.html">
+                <h2>Login</h2>
+                    <form method="post" action="login_process.php">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" required><br><br>
+                        <label for="password">Password: </label>
+                        <input type="password" name="password" required><br><br>
+                        <input type="submit" value="Login">
+                    </form>
+                <a href="index.php">
                   Home
                 </a>
               </div>
@@ -108,47 +110,7 @@
                     <img src="images/blog1.jpg" alt="" />
                   </div>
                   <div class="blog-detail">
-                    <div class="blog_title">
-                      <h5>
-                        Best Art
-                      </h5>
-                      <div class="blog_post">
-                        <h6>
-                          Post By: Vpk
-                        </h6>
-                        <h6>
-                          16-01-2020
-                        </h6>
-                      </div>
-                    </div>
-                    <p>
-                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="box b2">
-                  <div class="img-box">
-                    <img src="images/blog2.jpg" alt="" />
-                  </div>
-                  <div class="blog-detail">
-                    <div class="blog_title">
-                      <h5>
-                        Artwork
-                      </h5>
-                      <div class="blog_post">
-                        <h6>
-                          Post By: Vpk
-                        </h6>
-                        <h6>
-                          16-01-2020
-                        </h6>
-                      </div>
-                    </div>
-                    <p>
-                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
-                    </p>
+                    
                   </div>
                 </div>
               </div>
@@ -211,19 +173,19 @@
               <div class="info_link-box">
                 <ul>
                   <li class=" active">
-                    <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="">
-                    <a class="" href="about.html">About </a>
+                    <a class="" href="about.php">About </a>
                   </li>
                   <li class="">
-                    <a class="" href="gallery.html">Gallery </a>
+                    <a class="" href="gallery.php">Gallery </a>
                   </li>
                   <li class="">
-                    <a class="" href="blog.html">Blog </a>
+                    <a class="" href="blog.php">Blog </a>
                   </li>
                   <li class="">
-                    <a class="" href="testimonial.html">Testimonial </a>
+                    <a class="" href="testimonial.php">Testimonial </a>
                   </li>
                 </ul>
               </div>
@@ -259,7 +221,7 @@
   <footer class="footer_section ">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved. ©Vpk Digital Art 
+        &copy; <span id="displayYear"></span> All Rights Reserved. &copy;Vpk Digital Art 
       </p>
     </div>
   </footer>

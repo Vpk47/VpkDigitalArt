@@ -483,8 +483,8 @@ a:focus {
 }
 
 .slider_section .carousel-indicators {
-  width: 550px;
-  min-width: 550px;
+  width: 250px;
+  min-width: 250px;
   position: relative;
   margin: 0;
   margin-left: 35px;
