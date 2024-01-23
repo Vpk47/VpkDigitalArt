@@ -1,7 +1,8 @@
 <?php
 
 $apiKey = 'HSB3XOR16VRKVEJS'; // Replace with your Alpha Vantage API Key
-$symbol = 'AAPL'; // Replace with your desired stock symbol
+// Predefined array of Tata Group-related stocks
+$symbols = ['TATAMOTORS', 'TATASTEEL', 'TATACONSUM', 'TATACHEM', 'TATAMTRDVR', 'TATAPOWER', 'TATAGLOBAL'];
 
 function getStockData($symbol, $apiKey) {
     $api_url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=$symbol&interval=5min&apikey=$apiKey";
@@ -30,21 +31,28 @@ function isBullishEngulfing($data, $volumeThreshold) {
     return $bullishEngulfing && $highVolume;
 }
 
-function checkTradingSuggestions($symbol, $apiKey) {
-    $stockData = getStockData($symbol, $apiKey);
-    $timeSeries = $stockData['Time Series (5min)'] ?? [];
+function checkTradingSuggestions($symbols, $apiKey) {
+    $suggestions = [];
+    foreach ($symbols as $symbol) {
+        $stockData = getStockData($symbol, $apiKey);
+        $timeSeries = $stockData['Time Series (5min)'] ?? [];
 
-    // Define a volume threshold (this is arbitrary, adjust based on your analysis)
-    $volumeThreshold = 50000; 
+        // Define a volume threshold (this is arbitrary, adjust based on your analysis)
+        $volumeThreshold = 50000; 
 
-    if (isBullishEngulfing($timeSeries, $volumeThreshold)) {
-        return "Bullish Engulfing pattern with high volume detected. Consider buying.";
-    } else {
-        return "No trading suggestion at the moment.";
+        if (isBullishEngulfing($timeSeries, $volumeThreshold)) {
+            $suggestions[$symbol] = "Bullish Engulfing pattern with high volume detected for $symbol. Consider buying.";
+        } else {
+            $suggestions[$symbol] = "No trading suggestion for $symbol at the moment.";
+        }
+
+        // Sleep to respect API rate limits
+        sleep(12); // Adjust sleep time as per the API's rate limit policy
     }
+    return $suggestions;
 }
 
-$suggestion = checkTradingSuggestions($symbol, $apiKey);
+$suggestions = checkTradingSuggestions($symbols, $apiKey);
 
 ?>
 
@@ -54,7 +62,9 @@ $suggestion = checkTradingSuggestions($symbol, $apiKey);
     <title>Stock Trading Suggestions</title>
 </head>
 <body>
-    <h1>Trading Suggestion for <?php echo htmlspecialchars($symbol); ?></h1>
-    <p><?php echo htmlspecialchars($suggestion); ?></p>
+    <h1>Trading Suggestions</h1>
+    <?php foreach ($suggestions as $symbol => $suggestion): ?>
+        <p><strong><?php echo htmlspecialchars($symbol); ?>:</strong> <?php echo htmlspecialchars($suggestion); ?></p>
+    <?php endforeach; ?>
 </body>
 </html>
